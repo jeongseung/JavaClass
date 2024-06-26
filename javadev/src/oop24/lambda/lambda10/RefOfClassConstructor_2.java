@@ -32,5 +32,4 @@ public class RefOfClassConstructor_2 {
 		a2.abc(3);
 		a3.abc(3);
 	}
-
 }
