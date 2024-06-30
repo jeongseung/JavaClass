@@ -1,20 +1,22 @@
 package oop27;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Bank {
-	Account[] accounts = new Account[100];
+	List<Account> accounts = new ArrayList<>();
 	int totalAccount;
 	
 	//계좌를 생성한다
 	void addAccount(String accountNo, String name) {
-		totalAccount++;
-		accounts[totalAccount] = new Account(accountNo, name);
-		
+		accounts.add(new Account(accountNo, name));
+		totalAccount = accounts.size();
 	}
 	
 	//계좌를 찾는다(계좌번호로)
 	Account getAccount(String accountNo) {
 		for(Account ac : accounts) {
-			if(ac.accountNo == accountNo) {
+			if(ac.accountNo.equals(accountNo)) {
 				return ac;
 			}
 		}
@@ -22,41 +24,27 @@ public class Bank {
 	}
 	
 	//계좌를 찾는다(소유자명으로)
-	Account[] findAccounts(String name) {
-		int cnt = 0;
-		Account[] tempAccount = new Account[totalAccount];
-		for(int i=0; i<totalAccount; i++) {
-			if(accounts[i].name == name) {
-				tempAccount[cnt] = accounts[i];
-				cnt++;
+	List<Account> findAccounts(String name) {
+		List<Account> tempAccount = new ArrayList<>();
+		for(Account ac : accounts) {
+			if(ac.name.equals(name)) {
+				tempAccount.add(ac);
 			}
 		}
-		Account[] findAccount = new Account[cnt];
-		for(int i=0; i<cnt; i++) {
-			
-		}
-		return null;
+		return tempAccount;
 	}
 	
 	//계좌목록을 본다
-	int getTotalAccount() {
-		int a = 4;
-		return a;
-	}
-
 	//총 계좌 수를 반환한다
-	public Account[] getAccounts() {
-		
-		return ;
+	int getTotalAccount() {
+		return totalAccount;
 	}
 
-	public void setAccounts(Account[] accounts) {
-		this.accounts = accounts;
+	//계좌목록을 본다
+	public List<Account> getAccounts() {
+		return accounts;
 	}
 
-	public void setTotalAccount(int totalAccount) {
-		this.totalAccount = totalAccount;
-	}
 	
 	
 	

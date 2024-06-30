@@ -20,8 +20,8 @@ public class Transaction {
 	
 	@Override
 	public String toString() {
-		return "Transaction [transactionDate=" + transactionDate + ", transactionTime=" + transactionTime + ", kind="
-				+ kind + ", amount=" + amount + ", balance=" + balance + "]";
+		return "[거래금액:" + amount + ", 잔액:" + balance+ "원 /"
+				+ transactionDate+transactionTime + "]";
 	}
 
 	public Transaction(String transactionDate, String transactionTime, long kind, long amount, long balance) {
@@ -30,37 +30,6 @@ public class Transaction {
 		this.transactionTime = transactionTime;
 		this.kind = kind;
 		this.amount = amount;
-		this.balance = balance;
-	}
-	
-	public String getTransactionDate() {
-		return transactionDate;
-	}
-	public void setTransactionDate(String transactionDate) {
-		this.transactionDate = transactionDate;
-	}
-	public String getTransactionTime() {
-		return transactionTime;
-	}
-	public void setTransactionTime(String transactionTime) {
-		this.transactionTime = transactionTime;
-	}
-	public long getKind() {
-		return kind;
-	}
-	public void setKind(long kind) {
-		this.kind = kind;
-	}
-	public long getAmount() {
-		return amount;
-	}
-	public void setAmount(long amount) {
-		this.amount = amount;
-	}
-	public long getBalance() {
-		return balance;
-	}
-	public void setBalance(long balance) {
 		this.balance = balance;
 	}
 

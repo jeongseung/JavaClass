@@ -9,19 +9,19 @@ import java.time.format.DateTimeFormatter;
 public class Date {
 
 	String day() {
-		LocalDate now = LocalDate.now();
-		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-		String formatedNow = now.format(format);
-		return formatedNow;
+		LocalDate date = LocalDate.now(); 
+		String formattedDate = date.format(DateTimeFormatter.ofPattern("YYYY년MM월dd일"));
+		return formattedDate;
 	}
 	
 	String time() {
-		LocalTime now = LocalTime.now();
-		int hour = now.getHour();
-		int minute = now.getMinute();
-		int second = now.getSecond();
-		String time = hour + "시 " + minute +"분 " +second+ "초";
-		return time;
+		LocalTime time = LocalTime.now(); 
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH시mm분ss초");
+		String formattedTime = time.format(formatter);
+		return formattedTime;
 	}
 	
+	
+
+
 }
